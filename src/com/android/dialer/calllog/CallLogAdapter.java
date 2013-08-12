@@ -38,6 +38,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Objects;
 
 import java.util.LinkedList;
+import com.android.phone.location.PhoneLocation;
 
 /**
  * Adapter class to fill in data for the Call Log.
@@ -255,7 +256,12 @@ import java.util.LinkedList;
         final long photoId = info.photoId;
         CharSequence formattedNumber = info.formattedNumber;
         final int[] callTypes = getCallTypes(c, count);
-        final String geocode = c.getString(CallLogQuery.GEOCODED_LOCATION);
+        final String geocode;
+        if (mContext.getResources().getConfiguration().locale.getCountry().equals("CN") || mContext.getResources().getConfiguration().locale.getCountry().equals("TW")) {
+            geocode = PhoneLocation.getCityFromPhone(c.getString(CallLogQuery.NUMBER).trim());
+        } else {
+            geocode = c.getString(CallLogQuery.GEOCODED_LOCATION);
+        }
         final PhoneCallDetails details;
         if (TextUtils.isEmpty(name)) {
             details = new PhoneCallDetails(number, formattedNumber, countryIso, geocode,
