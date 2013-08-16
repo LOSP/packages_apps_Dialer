@@ -131,4 +131,74 @@
     <string name="simContacts_emptyLoading" msgid="6700035985448642408">"正从 SIM 卡中载入..."</string>
     <string name="simContacts_title" msgid="27341688347689769">"SIM 卡联系人"</string>
     <string name="add_contact_not_available" msgid="1419207765446461366">"必须重新启用联系人应用才能使用此功能。"</string>
+
+    <!-- Title bar for call stat detail screen -->
+    <string name="callStatsDetailTitle">呼叫统计详情</string>
+    <string name="call_stats">呼叫统计</string>
+    <string name="call_stats_refresh">刷新</string>
+    <string name="activity_title_call_stats">呼叫统计</string>
+
+    <string name="call_stats_nav_all">全部</string>
+    <string name="call_stats_nav_incoming">打入</string>
+    <string name="call_stats_nav_outgoing">拨出</string>
+    <string name="call_stats_nav_missed">未接</string>
+    <string name="call_stats_incoming">打入: <xliff:g id="percent">%d</xliff:g>%%</string>
+    <string name="call_stats_outgoing">拨出: <xliff:g id="percent">%d</xliff:g>%%</string>
+    <string name="call_stats_missed">未接</string>
+    <string name="call_stats_missed_percent">未接: <xliff:g id="percent">%d</xliff:g>%%</string>
+    <string name="call_stats_header_total">全部: <xliff:g id="call_count">%s</xliff:g>, <xliff:g id="duration">%s</xliff:g></string>
+    <string name="call_stats_header_total_callsonly">全部: <xliff:g id="call_count">%s</xliff:g></string>
+    <string name="call_stats_filter_from">开始日期</string>
+    <string name="call_stats_filter_to">结束日期</string>
+    <string name="call_stats_filter_picker_title">过滤规则</string>
+
+    <string name="date_quick_selection">快速选择</string>
+    <string name="date_qs_currentmonth">本月</string>
+    <string name="date_qs_currentquarter">本季度</string>
+    <string name="date_qs_currentyear">本年</string>
+    <string name="date_qs_lastweek">上周</string>
+    <string name="date_qs_lastmonth">上月</string>
+    <string name="date_qs_lastquarter">上季度</string>
+    <string name="date_qs_lastyear">去年</string>
+
+    <string name="call_stats_date_filter">调整时间范围</string>
+    <string name="call_stats_reset_filter">重置时间范围</string>
+    <string name="call_stats_sort_by_duration">按通话时长排序</string>
+    <string name="call_stats_sort_by_count">按通话数量排序</string>
+
+    <!-- 0:           sec
+         1:      min
+         2:      min  sec
+         3: hour
+         4: hour      sec
+         5: hour min
+         6: hour min  sec -->
+
+    <string-array name="call_stats_duration">
+        <item><xliff:g id="seconds" example="2 secs">%3$s</xliff:g></item>
+        <item><xliff:g id="minutes" example="2 mins">%2$s</xliff:g></item>
+        <item><xliff:g id="minutes" example="2 mins">%2$s</xliff:g> <xliff:g id="seconds" example="2 secs">%3$s</xliff:g></item>
+        <item><xliff:g id="hours" example="2 hrs">%1$s</xliff:g></item>
+        <item><xliff:g id="hours" example="2 hrs">%1$s</xliff:g> <xliff:g id="seconds" example="2 secs">%3$s</xliff:g></item>
+        <item><xliff:g id="hours" example="2 hrs">%1$s</xliff:g> <xliff:g id="minutes" example="2 mins">%2$s</xliff:g></item>
+         <item><xliff:g id="hours" example="2 hrs">%1$s</xliff:g> <xliff:g id="minutes" example="2 mins">%2$s</xliff:g> <xliff:g id="seconds" example="2 secs">%3$s</xliff:g></item>
+    </string-array>
+
+    <plurals name="hour">
+        <item quantity="one">1 小时</item>
+        <item quantity="other">%d 小时</item>
+    </plurals>
+    <plurals name="minute">
+        <item quantity="one">1 分钟</item>
+        <item quantity="other">%d 分钟</item>
+    </plurals>
+    <plurals name="second">
+        <item quantity="one">1 秒</item>
+        <item quantity="other">%d 秒</item>
+    </plurals>
+
+    <plurals name="call">
+        <item quantity="one">1 通话</item>
+        <item quantity="other">%d 通话</item>
+    </plurals>
 </resources>
