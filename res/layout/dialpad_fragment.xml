@@ -77,36 +77,60 @@
     <View style="@style/DialpadHorizontalSeparator"/>
 
     <!-- left and right paddings will be modified by the code. See DialpadFragment. -->
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/dialButtonContainer"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="0px"
         android:layout_weight="@integer/dialpad_layout_weight_additional_buttons"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:background="@drawable/dialpad_background">
 
         <ImageButton
+            android:id="@+id/searchButton"
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:state_enabled="false"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/description_search_button"
+            android:src="@drawable/ic_dial_action_search"
+            android:layout_weight="0.3" />
+
+        <View
+            android:layout_gravity="center_vertical"
+            android:background="?android:dividerVertical"
+            android:layout_width="1.0dip"
+            android:layout_height="25.0dip" />
+
+        <ImageButton
             android:id="@+id/dialButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="10.0px"
+            android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:state_enabled="false"
             android:background="@drawable/btn_call"
             android:contentDescription="@string/description_dial_button"
-            android:src="@drawable/ic_dial_action_call" />
+            android:src="@drawable/ic_dial_action_call"
+            android:layout_weight="0.4" />
+
+        <View
+            android:layout_gravity="center_vertical"
+            android:background="?android:dividerVertical"
+            android:layout_width="1.0dip"
+            android:layout_height="25.0dip" />
 
         <ImageButton
             android:id="@+id/deleteButton"
-            android:layout_width="56dip"
-            android:layout_height="56dip"
-            android:layout_gravity="center|right"
-            android:gravity="center|right"
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
             android:state_enabled="false"
             android:background="?android:attr/selectableItemBackground"
             android:contentDescription="@string/description_delete_button"
-            android:src="@drawable/ic_dial_action_delete" />
+            android:src="@drawable/ic_dial_action_delete"
+            android:layout_weight="0.3" />
 
-    </FrameLayout>
+    </LinearLayout>
 
     <!-- "Dialpad chooser" UI, shown only when the user brings up the
          Dialer while a call is already in progress.

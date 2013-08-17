@@ -271,9 +271,6 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
     private CallLogFragment mCallLogFragment;
     private PhoneFavoriteFragment mPhoneFavoriteFragment;
 
-    private View mSearchButton;
-    private View mMenuButton;
-
     private final ContactListFilterListener mContactListFilterListener =
             new ContactListFilterListener() {
         @Override
@@ -500,23 +497,6 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
         int cellCount = dm.widthPixels / minCellSize;
         int fakeMenuItemWidth = dm.widthPixels / cellCount;
         if (DEBUG) Log.d(TAG, "The size of fake menu buttons (in pixel): " + fakeMenuItemWidth);
-
-        // Soft menu button should appear only when there's no hardware menu button.
-        mMenuButton = findViewById(R.id.overflow_menu);
-        if (mMenuButton != null) {
-            mMenuButton.setMinimumWidth(fakeMenuItemWidth);
-            if (ViewConfiguration.get(this).hasPermanentMenuKey()) {
-                // This is required for dialpad button's layout, so must not use GONE here.
-                mMenuButton.setVisibility(View.INVISIBLE);
-            } else {
-                mMenuButton.setOnClickListener(this);
-            }
-        }
-        mSearchButton = findViewById(R.id.searchButton);
-        if (mSearchButton != null) {
-            mSearchButton.setMinimumWidth(fakeMenuItemWidth);
-            mSearchButton.setOnClickListener(this);
-        }
 
         // Setup the ActionBar tabs (the order matches the tab-index contants TAB_INDEX_*)
         setupDialer();
@@ -1252,20 +1232,6 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
             Log.d(TAG, "updateFakeMenuButtonVisibility(" + visible + ")");
         }
 
-        if (mSearchButton != null) {
-            if (visible) {
-                mSearchButton.setVisibility(View.VISIBLE);
-            } else {
-                mSearchButton.setVisibility(View.INVISIBLE);
-            }
-        }
-        if (mMenuButton != null) {
-            if (visible && !ViewConfiguration.get(this).hasPermanentMenuKey()) {
-                mMenuButton.setVisibility(View.VISIBLE);
-            } else {
-                mMenuButton.setVisibility(View.INVISIBLE);
-            }
-        }
     }
 
     /** Returns an Intent to launch Call Settings screen */
