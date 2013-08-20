@@ -101,7 +101,7 @@ public class SmartDialController {
     private final List<LinearLayout> mViewOverlays = Lists.newArrayList();
     private final List<LinearLayout> mViews = Lists.newArrayList();
 
-    private static final int NUM_SUGGESTIONS = 3;
+    private static final int NUM_SUGGESTIONS = 21;
 
     private static final long ANIM_DURATION = 200;
 
@@ -215,6 +215,7 @@ public class SmartDialController {
         for (int i = 0; i < NUM_SUGGESTIONS; i++) {
             // Retrieve the former overlay to be used as the new active view
             final LinearLayout active = mViewOverlays.get(i);
+            active.setVisibility(View.VISIBLE);
             final SmartDialEntry item = mEntries.get(i);
 
             noSuggestions &= (item == SmartDialEntry.NULL);
@@ -226,27 +227,27 @@ public class SmartDialController {
             show(active);
             if (!containsSameContact(oldItem, item)) {
                 // Determine what kind of animation to use for the new view
-                if (i == 1) { // Middle suggestion
-                    if (containsSameContact(item, mOldEntries.get(0))) {
+                if (i % 3 == 1) { // Middle suggestion
+                    if (containsSameContact(item, mOldEntries.get(i - 1))) {
                         // Suggestion went from the left to the middle, slide it left to right
                         animateSlideFromLeft(active);
-                        dontAnimateOverlay[0] = true;
-                    } else if (containsSameContact(item, mOldEntries.get(2))) {
+                        dontAnimateOverlay[i - 1] = true;
+                    } else if (containsSameContact(item, mOldEntries.get(i + 1))) {
                         // Suggestion sent from the right to the middle, slide it right to left
                         animateSlideFromRight(active);
-                        dontAnimateOverlay[2] = true;
+                        dontAnimateOverlay[i + 1] = true;
                     } else {
                         animateFadeInAndSlideUp(active);
                     }
                 } else { // Left/Right suggestion
-                    if (i == 2 && containsSameContact(item, mOldEntries.get(1))) {
+                    if (i % 3 == 2 && containsSameContact(item, mOldEntries.get(i - 1))) {
                         // Suggestion went from middle to the right, slide it left to right
                         animateSlideFromLeft(active);
-                        dontAnimateOverlay[1] = true;
-                    } else if (i == 0 && containsSameContact(item, mOldEntries.get(1))) {
+                        dontAnimateOverlay[i - 1] = true;
+                    } else if (i % 3 == 0 && containsSameContact(item, mOldEntries.get(i + 1))) {
                         // Suggestion went from middle to the left, slide it right to left
                         animateSlideFromRight(active);
-                        dontAnimateOverlay[1] = true;
+                        dontAnimateOverlay[i + 1] = true;
                     } else {
                         animateFadeInAndSlideUp(active);
                     }
@@ -256,11 +257,13 @@ public class SmartDialController {
                 // show the new view.
                 dontAnimateOverlay[i] = true;
             }
-            mList.getOverlay().add(overlay);
-            mList.addView(active);
-            // Keep track of active views and view overlays
-            mViews.set(i, active);
-            mViewOverlays.set(i, overlay);
+            if (item != SmartDialEntry.NULL) {
+                mList.getOverlay().add(overlay);
+                mList.addView(active);
+                // Keep track of active views and view overlays
+                mViews.set(i, active);
+                mViewOverlays.set(i, overlay);
+            }
         }
 
         // Separate loop for overlay animations. At this point in time {@link #mViewOverlays}
