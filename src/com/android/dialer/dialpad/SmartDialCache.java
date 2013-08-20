@@ -33,7 +33,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.contacts.common.util.StopWatch;
-import com.android.mms.util.HanziToPinyin;
+import com.android.dialer.util.HanziToPinyin;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
