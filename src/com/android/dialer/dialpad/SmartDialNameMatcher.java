@@ -17,6 +17,7 @@
 package com.android.dialer.dialpad;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.android.dialer.dialpad.SmartDialTrie.CountryCodeWithOffset;
 

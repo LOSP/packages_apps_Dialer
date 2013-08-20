@@ -363,8 +363,8 @@ public class SmartDialController {
                     }
                     // Create a new ForegroundColorSpan for each section of the name to highlight,
                     // otherwise multiple highlights won't work.
-                    displayName.setSpan(new ForegroundColorSpan(mNameHighlightedTextColor), p.start,
-                            p.end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    /*displayName.setSpan(new ForegroundColorSpan(mNameHighlightedTextColor), p.start,
+                            p.end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);*/
                 }
             }
             nameView.setText(displayName);
