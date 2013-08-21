@@ -1329,4 +1329,50 @@ public class HanziToPinyin {
         }
         return result.toString();
     }
+
+    public boolean isChineseWords(String source) {
+        if (!Arrays.asList(Collator.getAvailableLocales()).contains(Locale.CHINA)) {
+            return false;
+        }
+        ArrayList<Token> tokens = this.get(source);
+        if (tokens == null || tokens.size() == 0) {
+            return false;
+        }
+        for (Token token : tokens) {
+            if (token.type == Token.PINYIN) {
+                return true;
+            }
+        }
+        return false;       
+    }
+
+    public String getFullWordsString(String source) {
+        if (!Arrays.asList(Collator.getAvailableLocales()).contains(Locale.CHINA)) {
+            return source;
+        }
+        ArrayList<Token> tokens = this.get(source);
+        if (tokens == null || tokens.size() == 0) {
+            return source;
+        }
+        StringBuffer result = new StringBuffer();
+        for (Token token : tokens) {
+            result.append(token.target);
+        }
+        return result.toString();
+    }
+
+    public String[] getSplitFullWordsString(String source) {
+        if (!Arrays.asList(Collator.getAvailableLocales()).contains(Locale.CHINA)) {
+            return null;
+        }
+        ArrayList<Token> tokens = this.get(source);
+        if (tokens == null || tokens.size() == 0) {
+            return null;
+        }
+        StringBuffer result = new StringBuffer();
+        for (Token token : tokens) {
+            result.append(token.target + ",");
+        }
+        return result.toString().split(",");
+    }
 }
