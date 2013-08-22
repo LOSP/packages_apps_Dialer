@@ -442,16 +442,29 @@ public class SmartDialController {
                             }
                         } else if (words.length == displayLength) {
                             // All PinYin Words
-                            if (words != null) {
-                                int lengthSum = 0;
-                                for (int i = 0; i < words.length; i++ ) {
-                                    lengthSum = lengthSum + words[i].length();
-                                    tmpEnd = p.end;
-                                    if (p.end <= lengthSum) {
-                                        p.end = i + 1;
-                                        if(tmpEnd >= p.end && tmpEnd <= displayLength && !checkMatcher(words[0].toString(),DialpadFragment.getDigitsText()))
-                                            p.end = tmpEnd ;
-                                        break;
+                            if (digitsLength <= words[0].length()) {
+                                if (words != null) {
+                                    int lengthSum = 0;
+                                    for (int i = 0; i < words.length; i++ ) {
+                                        lengthSum = lengthSum + words[i].length();
+                                        tmpEnd = p.end;
+                                        if (p.end <= lengthSum) {
+                                            p.end = i + 1;
+                                            if(tmpEnd >= p.end && tmpEnd <= displayLength && !checkMatcher(words[0].toString(),DialpadFragment.getDigitsText()))
+                                                p.end = tmpEnd ;
+                                            break;
+                                        }
+                                    }
+                                }
+                            } else if(p.end > displayLength || digitsLength == 3 && checkMatcher(words[0].toString(),DialpadFragment.getDigitsText().substring(0, 2))) {
+                                if (words != null) {
+                                    int lengthSum = 0;
+                                    for (int i = 0; i < words.length; i++ ) {
+                                        lengthSum = lengthSum + words[i].length();
+                                        if (p.end <= lengthSum) {
+                                            p.end = i + 1;
+                                            break;
+                                        }
                                     }
                                 }
                             }
