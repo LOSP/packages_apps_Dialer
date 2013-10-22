@@ -1,134 +1,325 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-  ~ Copyright (C) 2012 The Android Open Source Project
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~      http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License
-   -->
-
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="applicationLabel" msgid="8490255569343340580">"Tárcsázó"</string>
-    <string name="launcherDialer" msgid="8636288196618486553">"Telefon"</string>
-    <string name="dialerIconLabel" msgid="6500826552823403796">"Telefon"</string>
-    <string name="recentCallsIconLabel" msgid="1419116422359067949">"Híváslista"</string>
-    <string name="menu_sendTextMessage" msgid="6937343460284499306">"SMS küldése"</string>
-    <string name="recentCalls_callNumber" msgid="1756372533999226126">"<xliff:g id="NAME">%s</xliff:g> hívása"</string>
-    <string name="recentCalls_editNumberBeforeCall" msgid="7756171675833267857">"Szám szerkesztése hívás előtt"</string>
-    <string name="recentCalls_addToContact" msgid="1429899535546487008">"Hozzáadás a névjegyekhez"</string>
-    <string name="recentCalls_removeFromRecentList" msgid="401662244636511330">"Eltávolítás a híváslistából"</string>
-    <string name="recentCalls_deleteAll" msgid="6352364392762163704">"Híváslista törlése"</string>
-    <string name="recentCalls_trashVoicemail" msgid="7604696960787435655">"Hangposta törlése"</string>
-    <string name="recentCalls_shareVoicemail" msgid="1416112847592942840">"Hangposta megosztása"</string>
-    <string name="recentCalls_empty" msgid="247053222448663107">"A híváslista üres."</string>
-    <string name="clearCallLogConfirmation_title" msgid="6427524640461816332">"Törli a híváslistát?"</string>
-    <string name="clearCallLogConfirmation" msgid="5043563133171583152">"Minden telefonhívás törlésre kerül."</string>
-    <string name="clearCallLogProgress_title" msgid="8365943000154295771">"Híváslista törlése..."</string>
-  <plurals name="notification_voicemail_title">
-    <item quantity="one" msgid="1746619685488504230">"Hangposta"</item>
-    <item quantity="other" msgid="5513481419205061254">"<xliff:g id="COUNT">%1$d</xliff:g> hangüzenet"</item>
-  </plurals>
-    <string name="notification_action_voicemail_play" msgid="6113133136977996863">"Lejátszás"</string>
-    <string name="notification_voicemail_callers_list" msgid="1153954809339404149">"<xliff:g id="NEWER_CALLERS">%1$s</xliff:g>, <xliff:g id="OLDER_CALLER">%2$s</xliff:g>"</string>
-    <string name="notification_new_voicemail_ticker" msgid="895342132049452081">"Új hangüzenet tőle: <xliff:g id="CALLER">%1$s</xliff:g>"</string>
-    <string name="voicemail_playback_error" msgid="1811242131549854624">"Nem lehet lejátszani a hangpostát."</string>
-    <string name="voicemail_buffering" msgid="738287747618697097">"Pufferelés…"</string>
-    <string name="voicemail_fetching_content" msgid="877911315738258780">"Hangpostaüzenet lekérése…"</string>
-    <string name="voicemail_fetching_timout" msgid="6691792377574905201">"A hangposta nem hívható le."</string>
-    <string name="call_log_new_header" msgid="846546437517724715">"Új"</string>
-    <string name="call_log_old_header" msgid="6262205894314263629">"Régebbi"</string>
-    <string name="call_log_voicemail_header" msgid="3945407886667089173">"Csak hangpostahívások"</string>
-    <string name="call_log_incoming_header" msgid="2787722299753674684">"Csak bejövő hívások"</string>
-    <string name="call_log_outgoing_header" msgid="761009180766735769">"Csak kimenő hívások"</string>
-    <string name="call_log_missed_header" msgid="8017148056610855956">"Csak nem fogadott hívások"</string>
-    <string name="voicemail_status_voicemail_not_available" msgid="3021980206152528883">"Nem lehet csatlakozni a hangpostaszerverhez."</string>
-    <string name="voicemail_status_messages_waiting" msgid="7113421459602803605">"A hangposta nem érhető el. Új hangüzenetek várakoznak."</string>
-    <string name="voicemail_status_configure_voicemail" msgid="3738537770636895689">"Állítsa be a hangpostát."</string>
-    <string name="voicemail_status_audio_not_available" msgid="3369618334553341626">"Nincs hang."</string>
-    <string name="voicemail_status_action_configure" msgid="8671796489912239589">"Beállítás"</string>
-    <string name="voicemail_status_action_call_server" msgid="1824816252288551794">"Hangposta hívása"</string>
-    <string name="voicemail_speed_slowest" msgid="1733460666177707312">"Leglassabb"</string>
-    <string name="voicemail_speed_slower" msgid="1508601287347216244">"Lassú"</string>
-    <string name="voicemail_speed_normal" msgid="9033988544627228892">"Normál sebesség"</string>
-    <string name="voicemail_speed_faster" msgid="2019965121475935488">"Gyors"</string>
-    <string name="voicemail_speed_fastest" msgid="5758712343491183292">"Leggyorsabb"</string>
-    <string name="call_log_item_count_and_date" msgid="7641933305703520787">"(<xliff:g id="COUNT">%1$d</xliff:g>) <xliff:g id="DATE">%2$s</xliff:g>"</string>
-    <string name="sms_disambig_title" msgid="5846266399240630846">"Válassza ki a számot"</string>
-    <string name="call_disambig_title" msgid="4392886850104795739">"Válassza ki a számot"</string>
-    <string name="make_primary" msgid="5829291915305113983">"Választás megjegyzése"</string>
-    <string name="description_image_button_one" msgid="1740638037139856139">"egy"</string>
-    <string name="description_image_button_two" msgid="5882638439003731308">"kettő"</string>
-    <string name="description_image_button_three" msgid="8709731759376015180">"három"</string>
-    <string name="description_image_button_four" msgid="3530239685642246130">"négy"</string>
-    <string name="description_image_button_five" msgid="1182465427501188413">"öt"</string>
-    <string name="description_image_button_six" msgid="2093656269261415475">"hat"</string>
-    <string name="description_image_button_seven" msgid="2450357020447676481">"hét"</string>
-    <string name="description_image_button_eight" msgid="6969435115163287801">"nyolc"</string>
-    <string name="description_image_button_nine" msgid="7857248695662558323">"kilenc"</string>
-    <string name="description_image_button_star" msgid="3365919907520767866">"csillag"</string>
-    <string name="description_image_button_zero" msgid="4133108949401820710">"nulla"</string>
-    <string name="description_image_button_pound" msgid="3039765597595889230">"kettős kereszt"</string>
-    <string name="description_voicemail_button" msgid="3402506823655455591">"hangposta"</string>
-    <string name="description_search_button" msgid="3660807558587384889">"keresés"</string>
-    <string name="description_dial_button" msgid="1274091017188142646">"tárcsázás"</string>
-    <string name="description_delete_button" msgid="6263102114033407382">"Backspace"</string>
-    <string name="description_digits_edittext" msgid="8760207516497016437">"a tárcsázandó szám"</string>
-    <string name="action_menu_overflow_description" msgid="2303272250613084574">"További beállítások"</string>
-    <string name="menu_copy" msgid="6108677035381940698">"Másolás"</string>
-    <string name="menu_show_outgoing_only" msgid="1965570298133301970">"Csak a kimenők megjelenítése"</string>
-    <string name="menu_show_incoming_only" msgid="7534206815238877417">"Csak a bejövők megjelenítése"</string>
-    <string name="menu_show_missed_only" msgid="154473166059743996">"Csak a nem fogadottak"</string>
-    <string name="menu_show_voicemails_only" msgid="1898421289561435703">"Csak a hangüzenetek"</string>
-    <string name="menu_show_all_calls" msgid="7560347482073345885">"Összes hívás megjelenítése"</string>
-    <string name="add_2sec_pause" msgid="9214012315201040129">"2 mp-es szünet hozzáadása"</string>
-    <string name="add_wait" msgid="3360818652790319634">"Várakozás hozzáadása"</string>
-    <string name="call_settings" msgid="7666474782093693667">"Beállítások"</string>
-    <string name="menu_newContact" msgid="1209922412763274638">"Új névjegy"</string>
-    <string name="callDetailTitle" msgid="5340227785196217938">"Hívás adatai"</string>
-    <string name="toast_call_detail_error" msgid="7200975244804730096">"Nem sikerült olvasni a megadott hívás adatait."</string>
-    <string name="dialer_useDtmfDialpad" msgid="1707548397435075040">"Hangkódos telefonbillentyűzet használata"</string>
-    <string name="dialer_returnToInCallScreen" msgid="3719386377550913067">"Vissza a folyamatban lévő híváshoz"</string>
-    <string name="dialer_addAnotherCall" msgid="4205688819890074468">"Hívás hozzáadása"</string>
-    <string name="type_incoming" msgid="6502076603836088532">"Bejövő hívás"</string>
-    <string name="type_outgoing" msgid="343108709599392641">"Kimenő hívás"</string>
-    <string name="type_missed" msgid="2720502601640509542">"Nem fogadott hívás"</string>
-    <string name="type_voicemail" msgid="5153139450668549908">"Hangposta"</string>
-    <string name="actionIncomingCall" msgid="6028930669817038600">"Bejövő hívások"</string>
-    <string name="description_call_log_play_button" msgid="651182125650429846">"Hangposta lejátszása"</string>
-    <string name="description_call_log_incoming_call" msgid="4485427487637250143">"Bejövő hívás"</string>
-    <string name="description_call_log_outgoing_call" msgid="604831756853471658">"Kimenő hívás"</string>
-    <string name="description_call_log_missed_call" msgid="2242805209983708825">"Nem fogadott hívás"</string>
-    <string name="description_call_log_voicemail" msgid="4600798771975158948">"Hangüzenet"</string>
-    <string name="description_add_contact" msgid="3103414772502485851">"Névjegy hozzáadása"</string>
-    <string name="description_view_contact" msgid="5205669345700598415">"<xliff:g id="NAME">%1$s</xliff:g> névjegyének megtekintése"</string>
-    <string name="description_call" msgid="3443678121983852666">"<xliff:g id="NAME">%1$s</xliff:g> hívása"</string>
-    <string name="description_send_text_message" msgid="7803126439934046891">"SMS küldése neki: <xliff:g id="NAME">%1$s</xliff:g>"</string>
-    <string name="description_call_log_unheard_voicemail" msgid="118101684236996786">"Nem lejátszott hangüzenet"</string>
-    <string name="call_log_empty_gecode" msgid="5588904744812100846">"-"</string>
-    <string name="menu_callNumber" msgid="997146291983360266">"Hívás: <xliff:g id="NUMBER">%s</xliff:g>"</string>
-    <string name="unknown" msgid="740067747858270469">"Ismeretlen"</string>
-    <string name="voicemail" msgid="3851469869202611441">"Hangposta"</string>
-    <string name="private_num" msgid="6374339738119166953">"Magántelefonszám"</string>
-    <string name="payphone" msgid="4864313342828942922">"Nyilvános telefon"</string>
-    <string name="dialerKeyboardHintText" msgid="5401660096579787344">"A tárcsázáshoz használja a billentyűzetet"</string>
-    <string name="dialerDialpadHintText" msgid="5824490365898349041">"Tárcsázás hívás hozzáadásához"</string>
-    <string name="callDetailsDurationFormat" msgid="8157706382818184268">"<xliff:g id="MINUTES">%s</xliff:g> perc <xliff:g id="SECONDS">%s</xliff:g> másodperc"</string>
-    <string name="dialog_phone_call_prohibited_message" msgid="6554711866586660441">"A hívás nem indítható."</string>
-    <string name="dialog_voicemail_not_ready_message" msgid="4384716252789515378">"A hangposta beállításához válassza a Menü &gt; Beállítások pontot."</string>
-    <string name="dialog_voicemail_airplane_mode_message" msgid="530922773669546093">"Hangposta hívásához kapcsolja ki a Repülőgép üzemmódot."</string>
-    <string name="contact_list_loading" msgid="5488620820563977329">"Betöltés..."</string>
-    <string name="imei" msgid="3045126336951684285">"IMEI"</string>
-    <string name="meid" msgid="6210568493746275750">"MEID"</string>
-    <string name="simContacts_emptyLoading" msgid="6700035985448642408">"Betöltés a SIM-kártyáról..."</string>
-    <string name="simContacts_title" msgid="27341688347689769">"Névjegyek a SIM-kártyán"</string>
-    <string name="add_contact_not_available" msgid="1419207765446461366">"A funkció használatához aktiválja újra a Személyek alkalmazást."</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toast_text_copied">Másolt szöveg</string>
+    <string name="call_custom">%s hívása</string>
+    <string name="call_home">Otthoni szám hívása</string>
+    <string name="call_mobile">Mobil hívása</string>
+    <string name="call_work">Munkahelyi telefon hívása</string>
+    <string name="call_fax_work">Munkahelyi fax hívása</string>
+    <string name="call_fax_home">Otthoni fax hívása</string>
+    <string name="call_pager">Csipogó hívása</string>
+    <string name="call_other">Hívás</string>
+    <string name="call_callback">Visszahívási szám hívása</string>
+    <string name="call_car">Gépkocsi hívása</string>
+    <string name="call_company_main">Céges fővonal hívása</string>
+    <string name="call_isdn">ISDN-telefon hívása</string>
+    <string name="call_main">Fő telefonszám hívása</string>
+    <string name="call_other_fax">Fax hívása</string>
+    <string name="call_radio">Rádiótelefon hívása</string>
+    <string name="call_telex">Telex hívása</string>
+    <string name="call_tty_tdd">TTY/TDD-szám hívása</string>
+    <string name="call_work_mobile">Munkahelyi mobil hívása</string>
+    <string name="call_work_pager">Munkahelyi csipogó hívása</string>
+    <string name="call_assistant">%s hívása</string>
+    <string name="call_mms">MMS-ben szereplő telefonszám hívása</string>
+    <string name="sms_custom">SMS: %s</string>
+    <string name="sms_home">SMS küldése haza</string>
+    <string name="sms_mobile">SMS küldése mobiltelefonra</string>
+    <string name="sms_work">SMS küldése munkahelyi telefonra</string>
+    <string name="sms_fax_work">SMS küldése munkahelyi faxszámra</string>
+    <string name="sms_fax_home">SMS küldése otthoni faxszámra</string>
+    <string name="sms_pager">SMS küldése csipogóra</string>
+    <string name="sms_other">SMS küldése</string>
+    <string name="sms_callback">SMS küldése visszahívandó számra</string>
+    <string name="sms_car">SMS küldése gépkocsinak</string>
+    <string name="sms_company_main">SMS küldése a céges fővonalra</string>
+    <string name="sms_isdn">SMS küldése ISDN-telefonra</string>
+    <string name="sms_main">SMS küldése fő telefonszámra</string>
+    <string name="sms_other_fax">SMS küldése faxszámra</string>
+    <string name="sms_radio">SMS küldése rádiótelefonra</string>
+    <string name="sms_telex">SMS küldése telexre</string>
+    <string name="sms_tty_tdd">SMS küldése szöveges telefonra (TTY/TDD)</string>
+    <string name="sms_work_mobile">SMS küldése munkahelyi mobilra</string>
+    <string name="sms_work_pager">SMS küldése munkahelyi csipogóra</string>
+    <string name="sms_assistant">SMS küldése ide: %s</string>
+    <string name="sms_mms">SMS küldése MMS-ben szereplő számra</string>
+    <string name="clearFrequentsConfirmation_title">Törli a gyakran keresetteket?</string>
+    <string name="clearFrequentsConfirmation">Törölni fogja a gyakran keresett személyek listáját a Személyek és a Telefon alkalmazásokban, és arra kényszeríti az e-mail alkalmazásokat, hogy újra, elölről megtanulják az Ön címzési beállításait.</string>
+    <string name="clearFrequentsProgress_title">Gyakran keresettek törlése...</string>
+    <string name="status_available">Elérhető</string>
+    <string name="status_away">Nincs a gépnél</string>
+    <string name="status_busy">Elfoglalt</string>
+    <string name="contactsList">Névjegyek</string>
+    <string name="local_invisible_directory">Egyéb</string>
+    <string name="directory_search_label">Címtár</string>
+    <string name="local_search_label">Összes névjegy</string>
+    <string name="user_profile_contacts_list_header">Én</string>
+    <string name="search_results_searching">Keresés…</string>
+    <string name="foundTooManyContacts">Több mint %d találat.</string>
+    <string name="listFoundAllContactsZero">Nincsenek névjegyek</string>
+    <string name="description_quick_contact_for">%1$s gyors elérése</string>
+    <string name="missing_name">(Nincs név)</string>
+    <string name="favoritesFrequentCalled">Gyakran hívott</string>
+    <string name="favoritesFrequentContacted">Gyakran keresettek</string>
+    <string name="description_view_contact_detail">Névjegy megtekintése</string>
+    <string name="list_filter_phones">Minden névjegy telefonszámokkal</string>
+    <string name="view_updates_from_group">Frissítések megtekintése</string>
+    <string name="account_phone">Csak a telefonon, nem szinkronizált</string>
+    <string name="nameLabelsGroup">Név</string>
+    <string name="nicknameLabelsGroup">Becenév</string>
+    <string name="full_name">Név</string>
+    <string name="name_given">Utónév</string>
+    <string name="name_family">Vezetéknév</string>
+    <string name="name_prefix">Név előtagja</string>
+    <string name="name_middle">Második utónév</string>
+    <string name="name_suffix">Név utótagja</string>
+    <string name="name_phonetic">Név fonetikusan</string>
+    <string name="name_phonetic_given">Utónév fonetikusan</string>
+    <string name="name_phonetic_middle">Második utónév fonetikusan</string>
+    <string name="name_phonetic_family">Vezetéknév fonetikusan</string>
+    <string name="phoneLabelsGroup">Telefonszám</string>
+    <string name="emailLabelsGroup">E-mail</string>
+    <string name="postalLabelsGroup">Cím</string>
+    <string name="imLabelsGroup">IM</string>
+    <string name="organizationLabelsGroup">Szervezet</string>
+    <string name="relationLabelsGroup">Kapcsolat</string>
+    <string name="eventLabelsGroup">Események</string>
+    <string name="sms">Szöveges üzenet</string>
+    <string name="postal_address">Cím</string>
+    <string name="ghostData_company">Cég</string>
+    <string name="ghostData_title">Cím</string>
+    <string name="label_notes">Megjegyzések</string>
+    <string name="label_sip_address">Internetes hívás</string>
+    <string name="websiteLabelsGroup">Webhely</string>
+    <string name="groupsLabel">Csoportok</string>
+    <string name="email_home">E-mail küldése haza</string>
+    <string name="email_mobile">E-mail küldése mobiltelefonra</string>
+    <string name="email_work">E-mail küldése munkahelyi címre</string>
+    <string name="email_other">E-mail küldése</string>
+    <string name="email_custom">E-mail küldése a(z) %s címre</string>
+    <string name="email">E-mail</string>
+    <string name="postal_street">Utca, házszám</string>
+    <string name="postal_pobox">Postafiók</string>
+    <string name="postal_neighborhood">Környék</string>
+    <string name="postal_city">Település</string>
+    <string name="postal_region">Állam</string>
+    <string name="postal_postcode">Irányítószám</string>
+    <string name="postal_country">Ország</string>
+    <string name="map_home">Otthoni cím megtekintése</string>
+    <string name="map_work">Munkahelyi cím megtekintése</string>
+    <string name="map_other">Cím megtekintése</string>
+    <string name="map_custom">%s cím megtekintése</string>
+    <string name="chat_aim">Csevegés AIM-on</string>
+    <string name="chat_msn">Csevegés a Windows Live-on</string>
+    <string name="chat_yahoo">Csevegés a Yahoon</string>
+    <string name="chat_skype">Csevegés Skype használatával</string>
+    <string name="chat_qq">Csevegés a QQ-n</string>
+    <string name="chat_gtalk">Csevegés a Google Csevegő használatával</string>
+    <string name="chat_icq">Csevegés az ICQ-n</string>
+    <string name="chat_jabber">Csevegés Jabberen</string>
+    <string name="chat">Csevegés</string>
+    <string name="description_minus_button">törlés</string>
+    <string name="expand_collapse_name_fields_description">Névmezők részletes vagy listanézete</string>
+    <string name="list_filter_all_accounts">Összes névjegy</string>
+    <string name="list_filter_all_starred">Csillaggal megjelölt</string>
+    <string name="list_filter_customize">Személyre szabás</string>
+    <string name="list_filter_single">Névjegy</string>
+    <string name="display_ungrouped">Az összes többi névjegy</string>
+    <string name="display_all_contacts">Összes névjegy</string>
+    <string name="menu_sync_remove">Szinkronizálási csoport eltávolítása</string>
+    <string name="dialog_sync_add">Szinkronizálási csoport hozzáadása</string>
+    <string name="display_more_groups">További csoportok...</string>
+    <string name="display_warn_remove_ungrouped">Ha leállítja a(z) „%s” csoport szinkronizálását, ugyanez történik a nem csoportosított névjegyekkel is.</string>
+    <string name="savingDisplayGroups">Megjelenítési beállítások mentése...</string>
+    <string name="menu_done">Kész</string>
+    <string name="menu_doNotSave">Mégse</string>
+    <string name="listAllContactsInAccount">Ismerősök itt: %s</string>
+    <string name="listCustomView">Névjegyek egyéni nézetben</string>
+    <string name="listSingleContact">Egyetlen névjegy</string>
+    <string name="dialog_new_contact_account">Névjegy létrehozása a következő fiókban:</string>
+    <string name="import_from_sim">Importálás a SIM kártyáról</string>
+    <string name="import_from_sdcard">Importálás a tárhelyről</string>
+    <string name="cancel_import_confirmation_message">Megszakítja %s importálását?</string>
+    <string name="cancel_export_confirmation_message">Megszakítja %s exportálását?</string>
+    <string name="cancel_vcard_import_or_export_failed">vCard imp./exp. megszakítása sikertelen</string>
+    <string name="fail_reason_unknown">Ismeretlen hiba.</string>
+    <string name="fail_reason_could_not_open_file" formatted="false">A(z) „%s” fájl nem nyitható meg: %s.</string>
+    <string name="fail_reason_could_not_initialize_exporter">Nem sikerült elindítani az exportálót: „%s”.</string>
+    <string name="fail_reason_no_exportable_contact">Nincs exportálható névjegy.</string>
+    <string name="fail_reason_error_occurred_during_export">Hiba történt az exportálás során: „%s”.</string>
+    <string name="fail_reason_too_long_filename">A fájlnév túl hosszú („%s”).</string>
+    <string name="fail_reason_too_many_vcard">Túl sok vCard fájl van a tárhelyen.</string>
+    <string name="fail_reason_io_error">I/O hiba</string>
+    <string name="fail_reason_low_memory_during_import">Nincs elég memória. Lehet, hogy túl nagy a fájl.</string>
+    <string name="fail_reason_vcard_parse_error">Váratlan ok miatt nem sikerült a vCard szintaktikai elemzése.</string>
+    <string name="fail_reason_not_supported">A formátum nem támogatott.</string>
+    <string name="fail_reason_failed_to_collect_vcard_meta_info">Nem sikerült begyűjteni a vCard-fájl(ok) metaadatait.</string>
+    <string name="fail_reason_failed_to_read_files">Egy vagy több fájl nem importálható (%s).</string>
+    <string name="exporting_vcard_finished_title">A(z) %s exportálása befejeződött.</string>
+    <string name="exporting_vcard_canceled_title">A(z) %s exportálása megszakítva.</string>
+    <string name="exporting_contact_list_title">Névjegyadatok exportálása</string>
+    <string name="exporting_contact_list_message">Névjegyadatok exportálása ide: %s.</string>
+    <string name="composer_failed_to_get_database_infomation">Nem sikerült lekérni az adatbázis-információkat.</string>
+    <string name="composer_has_no_exportable_contact">Nincsenek exportálható névjegyek. Ha vannak névjegyek a telefonján, akkor előfordulhat, hogy az adatszolgáltató nem teszi lehetővé a névjegyek exportálását a telefonról.</string>
+    <string name="composer_not_initialized">A vCard-készítő nem megfelelően indult el.</string>
+    <string name="exporting_contact_failed_title">Sikertelen export</string>
+    <string name="exporting_contact_failed_message">"Nem sikerült a névjegyadatok exportálása.
+Ok: „%s”"</string>
+    <string name="no_sdcard_message">Nem található tárhely.</string>
+    <string name="confirm_export_message">Névjegyek listájának exportálása a(z) %s fájlba.</string>
+    <string name="importing_vcard_description">Importálás – %s</string>
+    <string name="reading_vcard_failed_title">Nem sikerült beolvasni a vCard adatait.</string>
+    <string name="reading_vcard_canceled_title">A vCard-adatok beolvasása megszakítva</string>
+    <string name="importing_vcard_finished_title">A(z) %s vCard importálása befejeződött</string>
+    <string name="importing_vcard_canceled_title">A(z) %s importálása megszakítva</string>
+    <string name="vcard_import_will_start_message">A(z) %s hamarosan importálva lesz.</string>
+    <string name="vcard_import_will_start_message_with_default_name">A fájl importálása nemsokára megtörténik.</string>
+    <string name="vcard_import_request_rejected_message">A vCard-importálási kérelem elutasítva. Próbálja újra később.</string>
+    <string name="vcard_export_will_start_message">A(z) %s hamarosan exportálva lesz.</string>
+    <string name="vcard_export_request_rejected_message">A vCard-exportálási kérelem elutasítva. Próbálja újra később.</string>
+    <string name="vcard_unknown_filename">névjegy</string>
+    <string name="caching_vcard_message">vCard(ok) mentése az ideiglenes helyi tárolóba. A tényleges importálás hamarosan megkezdődik.</string>
+    <string name="percentage">%s%%</string>
+    <string name="vcard_import_failed">Nem sikerült a vCard importálása.</string>
+    <string name="import_failure_no_vcard_file">Nem található vCard fájl a tárhelyen.</string>
+    <string name="nfc_vcard_file_name">NFC-n kapott név</string>
+    <string name="confirm_export_title">Exportálja a névjegyeket?</string>
+    <string name="select_vcard_title">Válassza ki a vCard fájlt</string>
+    <string name="import_one_vcard_string">Egyetlen vCard fájl importálása</string>
+    <string name="import_multiple_vcard_string">Több vCard fájl importálása</string>
+    <string name="import_all_vcard_string">Az összes vCard fájl importálása</string>
+    <string name="searching_vcard_message">vCard-adatok keresése a tárhelyen...</string>
+    <string name="caching_vcard_title">Gyorsítótárazás</string>
+    <string name="scanning_sdcard_failed_message">A tárhelyet nem lehet beolvasni. (Ok: „%s”)</string>
+    <string name="progress_notifier_message" formatted="false">Importálás – %s/%s: %s</string>
+    <string name="export_to_sdcard">Exportálás a tárhelyre</string>
+    <string name="share_visible_contacts">Látható névjegyek megosztása</string>
+    <string name="dialog_import_export">Névjegyek importálása/exportálása</string>
+    <string name="dialog_import">Névjegyek importálása</string>
+    <string name="share_error">Ez a névjegy nem osztható meg.</string>
+    <string name="menu_search">Keresés</string>
+    <string name="menu_contacts_filter">Megjelenítendő névjegyek</string>
+    <string name="activity_title_contacts_filter">Megjelenítendő névjegyek</string>
+    <string name="custom_list_filter">Egyéni nézet megadása</string>
+    <string name="hint_findContacts">Névjegy keresése</string>
+    <string name="contactsFavoritesLabel">Kedvencek</string>
+    <string name="listTotalAllContactsZero">Nincsenek névjegyek.</string>
+    <string name="listTotalAllContactsZeroCustom">Nincsenek látható névjegyek.</string>
+    <string name="listTotalAllContactsZeroStarred">Nincsenek kedvencek.</string>
+    <string name="listTotalAllContactsZeroGroup">Nincsenek névjegyek itt: %s</string>
+    <string name="menu_clear_frequents">Gyakran keresettek törlése</string>
+    <string name="menu_accounts">Fiókok</string>
+    <string name="menu_import_export">Importálás/exportálás</string>
+    <string name="description_send_message">Üzenet küldése a következőnek: %1$s</string>
+    <string name="description_dial_phone_number">%1$s tárcsázása</string>
+    <string name="applicationLabel">Tárcsázó</string>
+    <string name="launcherDialer">Telefon</string>
+    <string name="dialerIconLabel">Telefon</string>
+    <string name="recentCallsIconLabel">Híváslista</string>
+    <string name="menu_sendTextMessage">SMS küldése</string>
+    <string name="recentCalls_callNumber">%s hívása</string>
+    <string name="recentCalls_editNumberBeforeCall">Szám szerkesztése hívás előtt</string>
+    <string name="recentCalls_addToContact">Hozzáadás a névjegyekhez</string>
+    <string name="recentCalls_removeFromRecentList">Eltávolítás a híváslistából</string>
+    <string name="recentCalls_deleteAll">Híváslista törlése</string>
+    <string name="recentCalls_trashVoicemail">Hangposta törlése</string>
+    <string name="recentCalls_shareVoicemail">Hangposta megosztása</string>
+    <string name="recentCalls_empty">A híváslista üres.</string>
+    <string name="clearCallLogConfirmation_title">Törli a híváslistát?</string>
+    <string name="clearCallLogConfirmation">Minden telefonhívás törlésre kerül.</string>
+    <string name="clearCallLogProgress_title">Híváslista törlése...</string>
+    <string name="notification_action_voicemail_play">Lejátszás</string>
+    <string name="notification_voicemail_callers_list">%1$s, %2$s</string>
+    <string name="notification_new_voicemail_ticker">Új hangüzenet tőle: %1$s</string>
+    <string name="voicemail_playback_error">Nem lehet lejátszani a hangpostát.</string>
+    <string name="voicemail_buffering">Pufferelés…</string>
+    <string name="voicemail_fetching_content">Hangpostaüzenet lekérése…</string>
+    <string name="voicemail_fetching_timout">A hangposta nem hívható le.</string>
+    <string name="call_log_new_header">Új</string>
+    <string name="call_log_old_header">Régebbi</string>
+    <string name="call_log_voicemail_header">Csak hangpostahívások</string>
+    <string name="call_log_incoming_header">Csak bejövő hívások</string>
+    <string name="call_log_outgoing_header">Csak kimenő hívások</string>
+    <string name="call_log_missed_header">Csak nem fogadott hívások</string>
+    <string name="voicemail_status_voicemail_not_available">Nem lehet csatlakozni a hangpostaszerverhez.</string>
+    <string name="voicemail_status_messages_waiting">A hangposta nem érhető el. Új hangüzenetek várakoznak.</string>
+    <string name="voicemail_status_configure_voicemail">Állítsa be a hangpostát.</string>
+    <string name="voicemail_status_audio_not_available">Nincs hang.</string>
+    <string name="voicemail_status_action_configure">Beállítás</string>
+    <string name="voicemail_status_action_call_server">Hangposta hívása</string>
+    <string name="voicemail_speed_slowest">Leglassabb</string>
+    <string name="voicemail_speed_slower">Lassú</string>
+    <string name="voicemail_speed_normal">Normál sebesség</string>
+    <string name="voicemail_speed_faster">Gyors</string>
+    <string name="voicemail_speed_fastest">Leggyorsabb</string>
+    <string name="call_log_item_count_and_date">(%1$d) %2$s</string>
+    <string name="sms_disambig_title">Válassza ki a számot</string>
+    <string name="call_disambig_title">Válassza ki a számot</string>
+    <string name="make_primary">Választás megjegyzése</string>
+    <string name="description_image_button_one">egy</string>
+    <string name="description_image_button_two">kettő</string>
+    <string name="description_image_button_three">három</string>
+    <string name="description_image_button_four">négy</string>
+    <string name="description_image_button_five">öt</string>
+    <string name="description_image_button_six">hat</string>
+    <string name="description_image_button_seven">hét</string>
+    <string name="description_image_button_eight">nyolc</string>
+    <string name="description_image_button_nine">kilenc</string>
+    <string name="description_image_button_star">csillag</string>
+    <string name="description_image_button_zero">nulla</string>
+    <string name="description_image_button_pound">kettős kereszt</string>
+    <string name="description_voicemail_button">hangposta</string>
+    <string name="description_search_button">keresés</string>
+    <string name="description_dial_button">tárcsázás</string>
+    <string name="description_delete_button">Backspace</string>
+    <string name="description_digits_edittext">a tárcsázandó szám</string>
+    <string name="action_menu_overflow_description">További beállítások</string>
+    <string name="menu_copy">Másolás</string>
+    <string name="menu_show_outgoing_only">Csak a kimenők megjelenítése</string>
+    <string name="menu_show_incoming_only">Csak a bejövők megjelenítése</string>
+    <string name="menu_show_missed_only">Csak a nem fogadottak</string>
+    <string name="menu_show_voicemails_only">Csak a hangüzenetek</string>
+    <string name="menu_show_all_calls">Összes hívás megjelenítése</string>
+    <string name="add_2sec_pause">2 mp-es szünet hozzáadása</string>
+    <string name="add_wait">Várakozás hozzáadása</string>
+    <string name="call_settings">Beállítások</string>
+    <string name="menu_newContact">Új névjegy</string>
+    <string name="callDetailTitle">Hívás adatai</string>
+    <string name="toast_call_detail_error">Nem sikerült olvasni a megadott hívás adatait.</string>
+    <string name="dialer_useDtmfDialpad">Hangkódos telefonbillentyűzet használata</string>
+    <string name="dialer_returnToInCallScreen">Vissza a folyamatban lévő híváshoz</string>
+    <string name="dialer_addAnotherCall">Hívás hozzáadása</string>
+    <string name="type_incoming">Bejövő hívás</string>
+    <string name="type_outgoing">Kimenő hívás</string>
+    <string name="type_missed">Nem fogadott hívás</string>
+    <string name="type_voicemail">Hangposta</string>
+    <string name="actionIncomingCall">Bejövő hívások</string>
+    <string name="description_call_log_play_button">Hangposta lejátszása</string>
+    <string name="description_call_log_incoming_call">Bejövő hívás</string>
+    <string name="description_call_log_outgoing_call">Kimenő hívás</string>
+    <string name="description_call_log_missed_call">Nem fogadott hívás</string>
+    <string name="description_call_log_voicemail">Hangüzenet</string>
+    <string name="description_add_contact">Névjegy hozzáadása</string>
+    <string name="description_view_contact">%1$s névjegyének megtekintése</string>
+    <string name="description_call">%1$s hívása</string>
+    <string name="description_send_text_message">SMS küldése neki: %1$s</string>
+    <string name="description_call_log_unheard_voicemail">Nem lejátszott hangüzenet</string>
+    <string name="call_log_empty_gecode">-</string>
+    <string name="menu_callNumber">Hívás: %s</string>
+    <string name="unknown">Ismeretlen</string>
+    <string name="voicemail">Hangposta</string>
+    <string name="private_num">Magántelefonszám</string>
+    <string name="payphone">Nyilvános telefon</string>
+    <string name="dialerKeyboardHintText">A tárcsázáshoz használja a billentyűzetet</string>
+    <string name="dialerDialpadHintText">Tárcsázás hívás hozzáadásához</string>
+    <string name="callDetailsDurationFormat" formatted="false">%s perc %s másodperc</string>
+    <string name="dialog_phone_call_prohibited_message">A hívás nem indítható.</string>
+    <string name="dialog_voicemail_not_ready_message">A hangposta beállításához válassza a Menü > Beállítások pontot.</string>
+    <string name="dialog_voicemail_airplane_mode_message">Hangposta hívásához kapcsolja ki a Repülőgép üzemmódot.</string>
+    <string name="contact_list_loading">Betöltés...</string>
+    <string name="imei">IMEI</string>
+    <string name="meid">MEID</string>
+    <string name="simContacts_emptyLoading">Betöltés a SIM-kártyáról...</string>
+    <string name="simContacts_title">Névjegyek a SIM-kártyán</string>
+    <string name="add_contact_not_available">A funkció használatához aktiválja újra a Személyek alkalmazást.</string>
 </resources>
