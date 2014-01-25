@@ -1,5 +1,7 @@
 /*
  * Copyright (C) 2013 The Android Open Source Project
+ * Copyright (C) 2014 The Light OpenSource Project
+ * Not a contribution
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +42,8 @@ import com.android.contacts.common.util.StopWatch;
 import com.android.dialer.R;
 import com.android.dialer.dialpad.SmartDialNameMatcher;
 import com.android.dialer.dialpad.SmartDialPrefix;
-
+import com.android.dialer.util.HanziToPinyin;
+import com.android.dialer.util.HanziToPinyin.Token;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
@@ -49,6 +52,7 @@ import com.google.common.collect.Lists;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -692,14 +696,20 @@ public class DialerDatabaseHelper extends SQLiteOpenHelper {
 
             while (nameCursor.moveToNext()) {
                 /** Computes a list of prefixes of a given contact name. */
-                final ArrayList<String> namePrefixes =
-                        SmartDialPrefix.generateNamePrefixes(nameCursor.getString(columnIndexName));
-
-                for (String namePrefix : namePrefixes) {
-                    insert.bindLong(1, nameCursor.getLong(columnIndexContactId));
-                    insert.bindString(2, namePrefix);
-                    insert.executeInsert();
-                    insert.clearBindings();
+                ArrayList<Token> tokens = null;
+                tokens = HanziToPinyin.getInstance().get(nameCursor.getString(columnIndexName));
+                
+                for (Token token : tokens) {
+                    if (DEBUG) {
+                        Log.d(TAG, "token.target = " + token.target);
+                    }
+                    final ArrayList<String> namePrefixes = SmartDialPrefix.generateNamePrefixes(token.target);
+                    for (String namePrefix : namePrefixes) {
+                        insert.bindLong(1, nameCursor.getLong(columnIndexContactId));
+                        insert.bindString(2, namePrefix);
+                        insert.executeInsert();
+                        insert.clearBindings();
+                    }
                 }
             }
 
@@ -952,7 +962,7 @@ public class DialerDatabaseHelper extends SQLiteOpenHelper {
                 final boolean nameMatches = nameMatcher.matches(displayName);
                 final boolean numberMatches =
                         (nameMatcher.matchesNumber(phoneNumber, query) != null);
-                if (nameMatches || numberMatches) {
+                if (true || numberMatches) {
                     /** If a contact has not been added, add it to the result and the hash set.*/
                     duplicates.add(contactMatch);
                     result.add(new ContactNumber(id, dataID, displayName, phoneNumber, lookupKey,
